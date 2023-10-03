@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Text sentiment prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  <body>
+    <a href="https://github.com/dibalaba/bad_buzz_detection" class="top-left-link" target="_blank">GitHub Repository Link</a>
+    <h1>Text sentiment prediction</h1>
+    <img src="{{url_for('static', filename='/Image/your_profile_pic.jpg')}}" alt="Your Profile Picture" class="profile">
+    <div class="form-box">
+    <form action="{{url_for('predict_datapoint')}}" method="POST">
+        <div class="form-group">
+            <label for="enter your text">twwet text:</label>
+            <input type="text" id="tweet" name="text" placeholder="Enter your text please">
+        </div>
+    
+        
+      
+    
+    
+    <div style="clear:both;"></div>
+      <input type="submit" value="Submit">
+    </form>
+    </div>
+    <div>      
+    <h2>
+      Predicted Sentiment is : {{ results }}
+    </h2>
+  </body>
+</html>
