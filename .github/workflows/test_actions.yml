@@ -1,4 +1,4 @@
-name: run docker image
+name: run docker image in background
 
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
@@ -25,7 +25,7 @@ jobs:
           password: dowta2012
       -
         name: run docker image
-        run: docker run dowta/mynewbackend:latest
+        run: docker run dowta/mynewbackend:latest -d
       -
         name: Send HTTP request
         id: request
