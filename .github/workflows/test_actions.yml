@@ -31,7 +31,7 @@ jobs:
         id: request
         uses: tyrrrz/action-http-request@master
         with:
-          url: http://192.168.1.137:80/predict
+          url: http://localhost:80/predict
           method: POST
           headers: |
             Content-Type: application/json
