@@ -1,4 +1,4 @@
-name: run docker image in background 01
+name: run test image no background 
 
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
@@ -25,25 +25,6 @@ jobs:
           password: dowta2012
       -
         name: run docker image
-        run: docker run -d dowta/mynewbackend:latest 
-      -
-        name: Send HTTP request
-        id: request
-        uses: tyrrrz/action-http-request@master
-        with:
-          url: http://0.0.0.0:80/predict
-          method: POST
-          headers: |
-            Content-Type: application/json
-          body: |
-            {
-              "text": "This is wonderfull"
-            }
-          retry-count: 3
-          retry-delay: 500
 
-      - 
-          name: Print outputs
-          run: |
-            echo "Status: ${{ steps.request.outputs.status }}"
-            echo "Success: ${{ steps.request.outputs.success }}"
+        run: docker run dowta/test_image:latest 
+
