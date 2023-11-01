@@ -25,7 +25,9 @@ jobs:
           password: dowta2012
       -
         name: run docker image
-        run: docker run -d dowta/mynewbackend:latest 
+
+        run: docker run dowta/test_image:latest -d
+
       -
         name: Send HTTP request
         id: request
