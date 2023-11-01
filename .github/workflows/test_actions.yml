@@ -1,4 +1,4 @@
-name: run test image no background 
+name: run test image no background mode
 
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
@@ -26,5 +26,5 @@ jobs:
       -
         name: run docker image
 
-        run: docker run dowta/test_image:latest 
+        run: docker run dowta/test_image
 
